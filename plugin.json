@@ -1,0 +1,29 @@
+{
+  "serviceProvider": "d2gPmPluginCarPartsFinder\\Providers\\PluginServiceProvider",
+  "version": "2.0.1",
+  "name": "d2gPmPluginCarPartsFinder",
+  "marketplaceName": { "de": "Car parts finder for Ceres", "en": "Car parts finder for Ceres" },
+  "description": "Car parts finder for Ceres developed by develop2grow.",
+  "author": "develop2grow UG",
+  "license": "Copyright by develop2grow UG",
+  "pluginIcon": "icon_plugin_xs.png",
+  "price": 0.0,
+  "shortDescription": {
+    "de": "Car parts finder for Ceres",
+    "en": "Car parts finder for Ceres"
+  },
+  "authorIcon": "icon_author_xs.png",
+  "email": "support@develop2grow.com",
+  "phone": "+49 231 22 61 31 80",
+  "categories": ["4091"],
+  "keywords": ["plentymarkets", "plugins", "widget", "ceres"],
+  "type": "plugin",
+  "require": ["Ceres", "IO"],
+  "namespace": "d2gPmPluginCarPartsFinder",
+  "runOnBuild":[
+    "d2gPmPluginCarPartsFinder\\Migrations\\createBasicTables",
+    "d2gPmPluginCarPartsFinder\\Migrations\\updateBasicTablesPosition"
+  ]
+
+}
+

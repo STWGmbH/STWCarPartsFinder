@@ -1,0 +1,18 @@
+{
+  "defaultEntryPoint": "index.html",
+  "namespace": "d2gPmPluginCarPartsFinder",
+  "menuEntries": [
+    {
+      "label": "Fahrzeugteilefinder",
+      "menu": "item",
+      "urlKey": "car-parts-finder",
+      "entryPoint": "relations/index.html"
+    },
+    {
+      "label": "Fahrzeugteilefinder",
+      "menu": "system/item",
+      "urlKey": "car-parts-finder",
+      "entryPoint": "cars/index.html"
+    }
+  ]
+}

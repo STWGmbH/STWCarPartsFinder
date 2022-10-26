@@ -1,0 +1,13 @@
+<script type="x/template" id="vue-car-parts-finder-modal">
+    <div v-for="entry in search">
+        <div class="d-flex justify-content-between mt-2">
+            <span>${ entry.car.name }</span>
+            <button class="btn btn-primary" @click="setCar(entry.car.id)">{{ trans("d2gPmPluginCarPartsFinder::Plugin.widgetChoose") }}</button>
+        </div>
+        <div v-for="listEntry in entry.list" class="d-flex justify-content-between mt-1">
+            <span>${ entry.car.name } (HSN/TSN: ${ listEntry.hsn } ${ listEntry.tsn })</span>
+            <button class="btn btn-primary" @click="setCar(entry.car.id, listEntry.id)">{{ trans("d2gPmPluginCarPartsFinder::Plugin.widgetChoose") }}</button>
+        </div>
+    </div>
+
+</script>

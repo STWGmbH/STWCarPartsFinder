@@ -1,0 +1,50 @@
+<script type="x/template" id="vue-car-parts-finder-search">
+    <div class="car-parts-finder-search row mx-0">
+        <div class="col-lg-7 col-12 px-0">
+            <div class="row mx-0">
+                <div class="form-control-brand col-lg-3 col-6 px-0">
+                    <select v-model="brand" @change="indexModels()" class="form-control" :disabled="loading">
+                        <option value="0">{{ trans('d2gPmPluginCarPartsFinder::Plugin.widgetBrand') }}</option>
+                        <option v-for="item in brands" v-bind:key="'brand-'+item.id" :value="item.id">${ item.name }</option>
+                    </select>
+                </div>
+                <div class="form-control-model col-lg-3 col-6 px-0">
+                    <select v-model="model" @change="indexTypes()" class="form-control" :disabled="loading">
+                        <option value="0">{{ trans('d2gPmPluginCarPartsFinder::Plugin.widgetModel') }}</option>
+                        <option v-for="item in models" v-bind:key="'model-'+item.id" :value="item.id">${ item.name }</option>
+                    </select>
+                </div>
+                <div class="form-control-type col-lg-3 col-6 px-0">
+                    <select v-model="type" @change="indexPlatforms()" class="form-control" :disabled="loading">
+                        <option value="0">{{ trans('d2gPmPluginCarPartsFinder::Plugin.widgetType') }}</option>
+                        <option v-for="item in types" v-bind:key="'type-'+item.id" :value="item.id">${ item.name }</option>
+                    </select>
+                </div>
+                <div class="form-control-platform col-lg-3 col-6 px-0">
+                    <select v-model="platform" class="form-control" :disabled="loading">
+                        <option value="0">{{ trans('d2gPmPluginCarPartsFinder::Plugin.widgetPlatform') }}</option>
+                        <option v-for="item in platforms" v-bind:key="'platform-'+item.id" :value="item.id">${ item.name }</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-12 px-0">
+            <div class="row mx-0">
+                <div class="col-lg-2 col-12 px-0 text-center">
+                    {{ trans('d2gPmPluginCarPartsFinder::Plugin.widgetOr') }}
+                </div>
+                <div class="form-control-hsn col-lg-3 col-6 px-0">
+                    <input class="form-control" v-model="hsn" placeholder="{{ trans('d2gPmPluginCarPartsFinder::Plugin.widgetHsn') }}" type="text">
+                </div>
+                <div class="form-control-tsn col-lg-3 col-6 px-0">
+                    <input class="form-control" v-model="tsn" placeholder="{{ trans('d2gPmPluginCarPartsFinder::Plugin.widgetTsn') }}" type="text">
+                </div>
+                <div class="col-lg-4 col-12 px-0">
+                    <button class="btn btn-primary btn-block"
+                            @click="searchCar()"
+                    >{{ trans('d2gPmPluginCarPartsFinder::Plugin.widgetSearch') }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

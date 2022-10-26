@@ -1,0 +1,10 @@
+<script type="x/template" id="vue-car-parts-finder-current">
+    <div class="car-parts-finder-current">
+        <template v-if="current.car">
+            <span class="current-car d-block float-left m-2">${ current.car.name }</span>
+            <span v-if="current.hsntsn.hsn != 'hsn'" class="current-hsntsn d-block float-left">${ current.hsntsn.hsn }/${ current.hsntsn.tsn }</span>
+            <button class="btn btn-danger float-left" @click="unsetCar">{{ trans('d2gPmPluginCarPartsFinder::Plugin.widgetDelete') }}</button>
+        </template>
+        <span v-else>{{ trans('d2gPmPluginCarPartsFinder::Plugin.widgetNoCar') }}</span>
+     </div>
+</script>
